@@ -67,7 +67,8 @@ class TopicsController extends Controller
         $this->authorize('update', $topic);
         $topic->update($request->all());
 
-        return redirect()->route($topic->link())->with('success', '更新成功！');
+        return redirect($topic->link())->with('success', '更新成功！');
+        // return redirect()->route($topic->link())->with('success', '更新成功！');
     }
 
 	public function destroy(Topic $topic)
@@ -86,10 +87,12 @@ class TopicsController extends Controller
             'msg'       => '上传失败!',
             'file_path' => ''
         ];
+        // echo "123";
         // 判断是否有上传文件，并赋值给 $file
         if ($file = $request->upload_file) {
             // 保存图片到本地
             $result = $uploader->save($file, 'topics', Auth::id(), 1024);
+            // echo "<script>console.log('Debug Objects: " . $result. "' );</script>";
             // 图片保存成功的话
             if ($result) {
                 $data['file_path'] = $result['path'];
@@ -97,6 +100,8 @@ class TopicsController extends Controller
                 $data['success']   = true;
             }
         }
+        // echo "<script>console.log('Debug Objects: " . $data. "' );</script>";
+        // echo $data['file_path'];
         return $data;
     }
 }
