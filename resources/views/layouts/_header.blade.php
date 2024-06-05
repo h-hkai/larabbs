@@ -2,7 +2,7 @@
   <div class="container">
     <!-- Branding Image -->
     <a class="navbar-brand " href="{{ url('/') }}">
-      LaraBBS
+      Embedded AI
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,6 +17,8 @@
         <li class="nav-item"><a class="nav-link {{ category_nav_active(2) }}" href="{{ route('categories.show', 2) }}">教程</a></li>
         <li class="nav-item"><a class="nav-link {{ category_nav_active(3) }}" href="{{ route('categories.show', 3) }}">问答</a></li>
         <li class="nav-item"><a class="nav-link {{ category_nav_active(4) }}" href="{{ route('categories.show', 4) }}">公告</a></li>
+        <li class="nav-item"><a class="nav-link {{ category_nav_active(5) }}" href="{{ route('categories.show', 5) }}">书籍</a></li>
+        <li class="nav-item"><a class="nav-link {{ category_nav_active(6) }}" href="{{ route('categories.show', 6) }}">招聘</a></li>
       </ul>
 
       <!-- Right Side Of Navbar -->
